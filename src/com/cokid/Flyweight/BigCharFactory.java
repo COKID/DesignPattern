@@ -3,19 +3,17 @@ package com.cokid.Flyweight;
 import java.util.HashMap;
 
 public class BigCharFactory {
-    // 管理已经生成的BigChar的实例
-    private HashMap pool = new HashMap();
-    // Singleton模式
-    private static BigCharFactory singleton = new BigCharFactory();
-    // 构造函数
-    private BigCharFactory() {
+
+    private HashMap pool = new HashMap();// 管理已经生成的BigChar的实例
+    private static BigCharFactory singleton = new BigCharFactory();// Singleton模式
+
+    private BigCharFactory() {// 构造函数
     }
-    // 获取唯一的实例
-    public static BigCharFactory getInstance() {
+    public static BigCharFactory getInstance() {// 获取唯一的实例
         return singleton;
     }
-    // 生成（共享）BigChar类的实例
-    public synchronized BigChar getBigChar(char charname) {
+
+    public synchronized BigChar getBigChar(char charname) {// 生成（共享）BigChar类的实例
         BigChar bc = (BigChar)pool.get("" + charname);
         if (bc == null) {
             bc = new BigChar(charname); // 生成BigChar的实例

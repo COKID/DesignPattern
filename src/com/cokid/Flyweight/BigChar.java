@@ -5,12 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class BigChar {
-    // 字符名字
-    private char charname;
-    // 大型字符对应的字符串(由'#' '.' '\n'组成)
-    private String fontdata;
-    // 构造函数
-    public BigChar(char charname) {
+    private char charname;// 字符名字
+    private String fontdata; // 大型字符对应的字符串(由'#' '.' '\n'组成)
+
+    public BigChar(char charname) {// 构造函数
         this.charname = charname;
         try {
             BufferedReader reader = new BufferedReader(
@@ -28,8 +26,8 @@ public class BigChar {
             this.fontdata = charname + "?";
         }
     }
-    // 显示大型字符
-    public void print() {
+
+    public void print() { // 显示大型字符
         System.out.print(fontdata);
     }
 }
